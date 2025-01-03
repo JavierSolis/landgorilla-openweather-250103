@@ -17,13 +17,13 @@ interface ApiOpenWeather {
     }
 
     //https://api.openweathermap.org/data/2.5/find?q=lima&type=like&sort=population&cnt=30&appid=API_KEY
-    @GET("/${uriFind}")
+    @GET(uriFind)
     fun find(
         @Query("q") query: String,
         @Query("type") type: String = "like",
         @Query("sort") sort: String = "population",
         @Query("cnt") cnt: Int = 30,
         @Query("appid") appId: String
-    ): Response<landgorilla.javiersolis.i020124.openweather.data.rest.dto.find.FindResponseDto>
+    ): Call<FindResponseDto>
 
 }

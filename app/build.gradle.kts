@@ -18,7 +18,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "API_KEY", "\"${property("OPEN_WEATHER_KEY")}\"")
-        buildConfigField("String", "BASE_URL", "\"https://api.openweathermap.org/data/2.5\"")
+        buildConfigField("String", "BASE_URL", "\"https://api.openweathermap.org/data/2.5/\"")
 
     }
 
@@ -46,6 +46,7 @@ android {
 }
 
 val koin_version = "3.1.2"
+val mockkVersion = "1.13.14"
 
 dependencies {
 
@@ -89,7 +90,7 @@ dependencies {
 
     //kapt Libs.moshi_codegen
     implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
-    //implementation Libs.retrofit2_adapter_rxjava
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.5.0")
     //endregion network
 
     //region persistence
@@ -100,6 +101,16 @@ dependencies {
     testImplementation(libs.junit)
 
     androidTestImplementation("androidx.test:runner:1.6.1")
+
+    /*
+    androidTestImplementation ("org.mockito:mockito-core:4.8.0")
+    androidTestImplementation ("org.mockito:mockito-inline:4.8.0")
+    androidTestImplementation ("org.mockito:mockito-android:4.8.0")
+    androidTestImplementation ("org.mockito.kotlin:mockito-kotlin:4.8.0")
+    */
+    androidTestImplementation("io.mockk:mockk-android:${mockkVersion}")
+    androidTestImplementation("io.mockk:mockk-agent:${mockkVersion}")
+
     //androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
     //androidTestImplementation("androidx.test.ext:junit:1.1.5")
     //androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

@@ -35,29 +35,27 @@ OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
 # Main Requirements
 
 1. Interfaz de Usuario:
-   [ ] Crear una pantalla principal con una barra de búsqueda en la parte superior y
+   [x] Crear una pantalla principal con una barra de búsqueda en la parte superior y
    una lista para mostrar los datos.
-   [ ] Incluir un diseño limpio y moderno utilizando Material Design.
+   [x] Incluir un diseño limpio y moderno utilizando Material Design.
 2. Lógica de Negocio:
-   [ ] Consumir datos de una API pública (por ejemplo, la API de OpenWeather
+   [x] Consumir datos de una API pública (por ejemplo, la API de OpenWeather
    https://openweathermap.org/api/one-call-3#how).
    [ ] Mostrar la información relevante en la lista (por ejemplo, nombres de
    ciudades y temperaturas para la API del clima).
-   [ ] Implementar un filtro que permita buscar elementos en la lista basándose en
+   [x] Implementar un filtro que permita buscar elementos en la lista basándose en
    una palabra clave.
 3. Persistencia de Datos:
-   [ ] Guardar en caché la información descargada para que esté disponible sin conexión.
+   [x] Guardar en caché la información descargada para que esté disponible sin conexión.
    [ ] Utilizar Room para almacenar los datos localmente.
 4. Buenas Prácticas:
-   [ ] Aplicar el patrón MVVM (Model-View-ViewModel).
-   [ ] Manejo adecuado de estados de la UI (loading, error, vacío).
+   [x] Aplicar el patrón MVVM (Model-View-ViewModel).
+   [x] Manejo adecuado de estados de la UI (loading, error, vacío).
    [ ] Escribir al menos un test unitario para la lógica de negocio y un test de UI
    utilizando JUnit y Espresso.
 
 
 # TODO
-
-
 
 [x] Setup initial project
 [x] Setup material dependency
@@ -73,20 +71,21 @@ OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
 [x] Setup Database
 
 [x] Setup search view interactions
-[-] Setup view
-[-] Setup viewmodel
-[-] Setup list view
-[-] Setup states
+[x] Setup view
+[x] Setup viewmodel
+[x] Setup list view
+[x] Setup states
 
-[>] Setup test UI
+[x] Setup test UI
+
+[x] Setup error handling
+[x] Setup loading
+
+[ ] Testing UI
 
 [ ] Save whit room
+[ ] Testing logic
 
-[ ] Setup test logic
-
-
-[ ] Setup error handling
-[ ] Setup loading
 
 [ ] Finalize readme
 [ ] Send project
@@ -116,4 +115,4 @@ OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
 - Room https://developer.android.com/jetpack/androidx/releases/room?hl=es-419
 
 - Test UI espresso https://developer.android.com/training/testing/espresso?hl=es-419
-- 
+- Para mock se usa https://mockk.io/ para kotlin y simular el viewmodel en las pruebas de la UI

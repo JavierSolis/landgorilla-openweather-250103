@@ -18,7 +18,7 @@ class FindApi(
     override suspend fun findCity(q: String): FindResponseDto {
         return api.find(
             query = q, appId = apiKey
-        ).body()!!
+        ).execute().body()!!
     }
 
 

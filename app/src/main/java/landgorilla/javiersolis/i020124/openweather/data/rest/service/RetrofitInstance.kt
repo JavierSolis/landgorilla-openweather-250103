@@ -1,6 +1,7 @@
 package landgorilla.javiersolis.i020124.openweather.data.rest.service
 
 import android.content.Context
+import android.util.Log
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -53,7 +54,7 @@ class RetrofitInstance{
             //System.out.println(project.ext.myprop + " " + project.ext.myversion)
             //println("Api que se consulta : $"+project.ext.myprop );
             val BASE_URL = BuildConfig.BASE_URL //""// ConstantSystemProperty.getBaseUrl()!!
-
+            Log.i("BASE_URL", BASE_URL)
             val moshi = Moshi
                 .Builder()
                 .add(KotlinJsonAdapterFactory())
@@ -72,7 +73,7 @@ class RetrofitInstance{
 
         private var API_OPEN_WEATHER: ApiOpenWeather?=null
 
-        fun getApi(context: Context): ApiOpenWeather {
+        fun getApiOld(context: Context): ApiOpenWeather {
             if(API_OPEN_WEATHER ==null){
                 API_OPEN_WEATHER = getRetrofit(
                     context
@@ -81,6 +82,10 @@ class RetrofitInstance{
             }
             return API_OPEN_WEATHER!!
         }
+        fun getApi(context: Context): ApiOpenWeather {
+            return getRetrofit(context).create(ApiOpenWeather::class.java)
+        }
+
         //public val API_LIMON : ApiLimon by lazy { retrofit.create(ApiLimon::class.java)}
     }
 }

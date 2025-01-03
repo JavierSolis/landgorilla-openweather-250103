@@ -54,7 +54,7 @@
 
     <!-- RecyclerView para mostrar los datos -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/search_results_rv"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="16dp"
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:visibility="gone"
-        android:text="No se encontraron resultados"
+        android:text="@string/search_dont_found"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/gray"
         app:layout_constraintTop_toBottomOf="@id/progress_bar"
