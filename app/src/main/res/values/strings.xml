@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OpenWeather</string>
+
+    <string name="search_hint">Escriba aquí el lugar a buscar</string>
+</resources>
