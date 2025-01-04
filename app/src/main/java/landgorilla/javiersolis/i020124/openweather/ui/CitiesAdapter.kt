@@ -42,7 +42,7 @@ class CitiesAdapter(private val cities: List<CityModel>) : RecyclerView.Adapter<
         fun bind(city: CityModel) {
             cityName.text = city.name
             country.text = city.country
-            temperature.text =  String.format("%.1f°C", city.temperature)
+            temperature.text =  String.format("%.1f°C", city.temperature-273.15)
             weatherDescription.text = city.description
 
             Glide.with(itemView.context)

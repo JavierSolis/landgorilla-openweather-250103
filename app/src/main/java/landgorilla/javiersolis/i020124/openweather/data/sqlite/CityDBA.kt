@@ -9,11 +9,11 @@ import landgorilla.javiersolis.i020124.openweather.data.repository.CityRepositor
  */
 
 class CityDBA(private val appDataBase: AppDatabase):CityRepository {
-    suspend fun insertCities(cities: List<CityEntity>) {
+    override fun insertCities(cities: List<CityEntity>) {
         appDataBase.cityDao().insertCities(cities)
     }
 
-    suspend fun searchCity(cityName: String): List<CityEntity> {
+    override fun searchCity(cityName: String): List<CityEntity> {
         return appDataBase.cityDao().searchCities(cityName)
     }
 }

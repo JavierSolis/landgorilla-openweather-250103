@@ -14,9 +14,7 @@ import landgorilla.javiersolis.i020124.openweather.domain.SearchWeatherDomain
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import landgorilla.javiersolis.i020124.openweather.ui.SearchViewModel
-import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
-import retrofit2.Retrofit
 
 val appModule = module {
     //Data
@@ -26,7 +24,6 @@ val appModule = module {
             .fallbackToDestructiveMigration()
             .build()
     }
-
     factory<OWFindRepository> { FindApi(get(),BuildConfig.API_KEY) }
     factory<CityRepository> { CityDBA(get()) }
 
@@ -35,23 +32,6 @@ val appModule = module {
     //Viewmodel
     factory { SearchViewModel(get()) }
 }
-
-
-/**
- * val repositoryModule = module {
- *     single<WeatherRepository> { WeatherRepositoryImpl(get(), get()) }
- * }
- *
- * val databaseModule = module {
- *     single { Room.databaseBuilder(get(), WeatherDatabase::class.java, "weather.db").build() }
- *     single { get<WeatherDatabase>().weatherDao() }
- * }
- *
- * val viewModelModule = module {
- *     viewModel { MainViewModel(get()) }
- * }
- */
-
 
 /**
  * Created by Javier J. Solis Flores on 2/01/25.

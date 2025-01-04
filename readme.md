@@ -45,6 +45,13 @@ OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
 ![](.readme_images/result.png)
 
 
+# Testing
+
+Se realizaron  3 test, 2 en SearchActivityTest.kt y 1 en WeatherRepositoryTest.kt
+
+![](.readme_images/test.png)
+
+
 
 # Main Requirements
 
@@ -61,13 +68,12 @@ OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
    una palabra clave.
 3. Persistencia de Datos:
    [x] Guardar en caché la información descargada para que esté disponible sin conexión.
-   [ ] Utilizar Room para almacenar los datos localmente.
+   [x] Utilizar Room para almacenar los datos localmente.
 4. Buenas Prácticas:
    [x] Aplicar el patrón MVVM (Model-View-ViewModel).
    [x] Manejo adecuado de estados de la UI (loading, error, vacío).
-   [ ] Escribir al menos un test unitario para la lógica de negocio y un test de UI
+   [x] Escribir al menos un test unitario para la lógica de negocio y un test de UI
    utilizando JUnit y Espresso.
-
 
 # TODO
 
@@ -97,14 +103,13 @@ OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
 
 [x] Testing UI
 
-[ ] Save whit room
-[ ] Testing logic
+[x] Save whit room
+[x] Testing logic
 
-[ ] Mejora de colores
-[ ]
+[x] Mejora de colores
 
-[ ] Finalize readme
-[ ] Send project
+[x] Finalize readme
+[x] Send project
 
 
 
@@ -133,7 +138,7 @@ OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
 - Test UI espresso https://developer.android.com/training/testing/espresso?hl=es-419
 - Para mock se usa https://mockk.io/ para kotlin y simular el viewmodel en las pruebas de la UI ( ref. https://discuss.kotlinlang.org/t/how-to-best-use-mockito-in-kotlin/24675/3 )
 - Pruebas con Koin https://proandroiddev.com/easy-instrumented-tests-ui-tests-for-android-in-2021-2e28134ff309
-
+- Para el mockk fue necesario usar los testoptions legacy ( ref. https://stackoverflow.com/questions/73146494/not-able-to-use-mockk-in-android-espresso-ui-testing)
 
 # Contributors
 

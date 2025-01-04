@@ -19,7 +19,7 @@ android {
         minSdk = 30
         targetSdk = 34
         versionCode = 1
-        versionName = "0.0.1-beta"
+        versionName = "1.0.0-alfa"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -118,6 +118,21 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.android.compat)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    // Koin Test features
+    testImplementation("io.insert-koin:koin-test:$koin_version")
+    // Koin for JUnit 4
+    testImplementation("io.insert-koin:koin-test-junit4:$koin_version")
+    // Koin for JUnit 5
+    testImplementation("io.insert-koin:koin-test-junit5:$koin_version")
+
+    // Koin Test features
+    androidTestImplementation("io.insert-koin:koin-test:$koin_version")
+    // Koin for JUnit 4
+    androidTestImplementation("io.insert-koin:koin-test-junit4:$koin_version")
+    // Koin for JUnit 5
+    androidTestImplementation("io.insert-koin:koin-test-junit5:$koin_version")
+
     //endregion injection
 
     //region network

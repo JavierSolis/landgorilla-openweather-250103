@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import landgorilla.javiersolis.i020124.openweather.BuildConfig
 import landgorilla.javiersolis.i020124.openweather.R
 import landgorilla.javiersolis.i020124.openweather.databinding.SearchBinding
+import landgorilla.javiersolis.i020124.openweather.utils.UtilKeyboard
 
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -21,12 +22,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class SearchActivity : AppCompatActivity(){
     private lateinit var binding: SearchBinding
 
-    // Propiedad para pruebas
     var vm: SearchViewModel? = null
-    // Usado en producción, se obtiene a través de Hilt
     val viewModel: SearchViewModel by viewModel()
-
-    //val vm: SearchViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,28 +70,25 @@ class SearchActivity : AppCompatActivity(){
                     binding.emptyText.visibility = View.VISIBLE
                 }
                 SearchState.Initial -> {
-
+                    //nothing
                 }
             }
-        }        // Observando el estado de la búsqueda
+        }
     }
 
     fun events(){
         binding.searchEditText.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                // Aquí se captura cuando se presiona la tecla "Buscar" (actionSearch)
-                // Puedes realizar la búsqueda o llamar a cualquier método necesario
                 performSearch(v.text.toString())
-                true // Retorna true para indicar que has manejado el evento
+                UtilKeyboard.hideKeyboard(v)
+                true
             } else {
-                false // Retorna false si el evento no es para la acción de búsqueda
+                false
             }
         }
     }
 
     private fun performSearch(query: String) {
-        // Aquí puedes manejar la lógica de búsqueda
-        // Por ejemplo, llamar al ViewModel para hacer la búsqueda
         vm?.searchWeather(query)
     }
 

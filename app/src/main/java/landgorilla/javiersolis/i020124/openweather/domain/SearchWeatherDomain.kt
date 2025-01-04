@@ -1,8 +1,10 @@
 package landgorilla.javiersolis.i020124.openweather.domain
 
+import android.util.Log
 import landgorilla.javiersolis.i020124.openweather.data.repository.CityRepository
 import landgorilla.javiersolis.i020124.openweather.data.repository.OWFindRepository
 import landgorilla.javiersolis.i020124.openweather.data.sqlite.CityDBA
+import landgorilla.javiersolis.i020124.openweather.data.sqlite.CityEntity
 import landgorilla.javiersolis.i020124.openweather.ui.CityModel
 
 /**
@@ -16,15 +18,28 @@ class SearchWeatherDomain(
 ) {
 
     suspend fun execute(countryName: String): Result<List<CityModel>> {
+        Log.i("MOCKKK", "Domain: $countryName")
+
         return try {
             val weatherData = owFindRepository.findCity(countryName)
             if (weatherData.count>0) {
+                Log.i("SearchWeatherDomain", "execute: ${weatherData.list}")
+                cityRepository.insertCities(weatherData.list.map {
+                    CityEntity(
+                        id = it.id,
+                        name = it.name,
+                        country = it.sys.country,
+                        temperature =  it.main.temp, // Kelvin to Celsius
+                        description = it.weather[0].description,
+                        icon = it.weather[0].icon,
+                    )
+                })
                 Result.success(weatherData.list.map {
                     CityModel(
                         id = it.id,
                         name = it.name,
                         country = it.sys.country,
-                        temperature =  it.main.temp - 273.15, // Kelvin to Celsius
+                        temperature =  it.main.temp, // Kelvin to Celsius
                         description = it.weather[0].description,
                         icon = it.weather[0].icon,
                         countryFlag = it.sys.country.lowercase()

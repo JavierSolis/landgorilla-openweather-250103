@@ -51,9 +51,7 @@ class RetrofitInstance{
             }.build()
 
         private fun getRetrofit(context: Context):Retrofit{
-            //System.out.println(project.ext.myprop + " " + project.ext.myversion)
-            //println("Api que se consulta : $"+project.ext.myprop );
-            val BASE_URL = BuildConfig.BASE_URL //""// ConstantSystemProperty.getBaseUrl()!!
+            val BASE_URL = BuildConfig.BASE_URL
             Log.i("BASE_URL", BASE_URL)
             val moshi = Moshi
                 .Builder()
@@ -71,21 +69,10 @@ class RetrofitInstance{
                 .build()
         }
 
-        private var API_OPEN_WEATHER: ApiOpenWeather?=null
 
-        fun getApiOld(context: Context): ApiOpenWeather {
-            if(API_OPEN_WEATHER ==null){
-                API_OPEN_WEATHER = getRetrofit(
-                    context
-                )
-                    .create(ApiOpenWeather::class.java)
-            }
-            return API_OPEN_WEATHER!!
-        }
         fun getApi(context: Context): ApiOpenWeather {
             return getRetrofit(context).create(ApiOpenWeather::class.java)
         }
 
-        //public val API_LIMON : ApiLimon by lazy { retrofit.create(ApiLimon::class.java)}
     }
 }

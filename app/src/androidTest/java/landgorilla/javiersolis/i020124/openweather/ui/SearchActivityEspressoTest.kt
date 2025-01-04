@@ -1,4 +1,4 @@
-package landgorilla.javiersolis.i020124.openweather
+package landgorilla.javiersolis.i020124.openweather.ui
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -16,10 +16,7 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
-import landgorilla.javiersolis.i020124.openweather.ui.CityModel
-import landgorilla.javiersolis.i020124.openweather.ui.SearchActivity
-import landgorilla.javiersolis.i020124.openweather.ui.SearchState
-import landgorilla.javiersolis.i020124.openweather.ui.SearchViewModel
+import landgorilla.javiersolis.i020124.openweather.R
 import org.hamcrest.Matchers.not
 
 
@@ -44,13 +41,13 @@ class SearchActivityEspressoTest {
     }
 
     @Test
-    fun testSearchStateSuccess() {
+    fun `search whit result success`() {
         every { mockViewModel.searchWeather("Lima") } answers {
             Log.e("TESTT","mockkoo")
             val listCities = listOf(
-                CityModel(1,"Lima1"),
-                CityModel(2,"Lima2"),
-                CityModel(3,"Lima3"),
+                CityModel(1,"Lima1","",12.0,"","",""),
+                CityModel(2,"Lima2","",12.0,"","",""),
+                CityModel(3,"Lima3","",12.0,"","",""),
             )
             liveData.postValue(SearchState.Success(data=listCities))
         }
@@ -88,7 +85,7 @@ class SearchActivityEspressoTest {
 
 
     @Test
-    fun testSearchStateEmpty() {
+    fun `search whit result empty`() {
         every { mockViewModel.searchWeather("Lima Peru") } answers {
             liveData.postValue(SearchState.Empty)
         }

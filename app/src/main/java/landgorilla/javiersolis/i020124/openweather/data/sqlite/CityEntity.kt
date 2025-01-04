@@ -12,22 +12,10 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "city_table")
 data class CityEntity(
     @PrimaryKey val id: Int,
-    val name: String,
-    val country: String,
+    @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "country") val country: String,
     val temperature: Double,
     val description: String,
     val icon: String
 
-    //val country: String,
-    //val lat: Double,
-    //val lon: Double,
-    //val temperature: Double,
-    //val feelsLike: Double,
-    //val minTemperature: Double,
-    //val maxTemperature: Double,
-    //val pressure: Int,
-    //val humidity: Int,
-    //val weatherMain: String,
-    //val weatherDescription: String,
-    //val icon: String
 )

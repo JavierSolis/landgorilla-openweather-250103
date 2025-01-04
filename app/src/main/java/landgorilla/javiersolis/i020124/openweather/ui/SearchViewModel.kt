@@ -10,7 +10,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import landgorilla.javiersolis.i020124.openweather.domain.SearchWeatherDomain
 
-fun <T : Any?> MutableLiveData<T>.default(initialValue: T) = apply { postValue (initialValue) }
 
 /**
  * Created by Javier J. Solis Flores on 2/01/25.
@@ -19,7 +18,10 @@ fun <T : Any?> MutableLiveData<T>.default(initialValue: T) = apply { postValue (
  */
 class SearchViewModel(private val searchWeatherUseCase: SearchWeatherDomain):ViewModel() {
 
-    private val _searchState = MutableLiveData<SearchState>().default(SearchState.Initial)
+    private val _searchState = MutableLiveData<SearchState>().apply {
+        postValue(SearchState.Initial)
+    }
+
     fun getState() = _searchState as LiveData<SearchState>
 
     fun searchWeather(country: String) {
@@ -31,7 +33,6 @@ class SearchViewModel(private val searchWeatherUseCase: SearchWeatherDomain):Vie
             val result = withContext(Dispatchers.IO) {
                 searchWeatherUseCase.execute(country)
             }
-            //val result = searchWeatherUseCase.execute(country)
 
             if (result.isSuccess) {
                 _searchState.value = SearchState.Success(result.getOrNull()!!)
