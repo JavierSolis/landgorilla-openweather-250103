@@ -17,7 +17,7 @@ Aplicación Android para consultar información de un servicio REST (API públic
 ```shell
 git clone git@github.com:JavierSolis/landgorilla-openweather-250103.git
 ```
-### 1. Se implemento en : Android Studio Android Studio Ladybug | 2024.2.1 Patch 3 <br> Build #AI-242.23339.11.2421.12700392, built on November 22, 2024
+### 1. Se implementó en : Android Studio Android Studio Ladybug | 2024.2.1 Patch 3 <br> Build #AI-242.23339.11.2421.12700392, built on November 22, 2024
 ### 2. Gradle actualizado.
 ### 3. Configuración de API KEYS
 
