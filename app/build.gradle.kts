@@ -119,20 +119,6 @@ dependencies {
     implementation(libs.koin.android.compat)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
-    // Koin Test features
-    testImplementation("io.insert-koin:koin-test:$koin_version")
-    // Koin for JUnit 4
-    testImplementation("io.insert-koin:koin-test-junit4:$koin_version")
-    // Koin for JUnit 5
-    testImplementation("io.insert-koin:koin-test-junit5:$koin_version")
-
-    // Koin Test features
-    androidTestImplementation("io.insert-koin:koin-test:$koin_version")
-    // Koin for JUnit 4
-    androidTestImplementation("io.insert-koin:koin-test-junit4:$koin_version")
-    // Koin for JUnit 5
-    androidTestImplementation("io.insert-koin:koin-test-junit5:$koin_version")
-
     //endregion injection
 
     //region network
@@ -162,10 +148,10 @@ dependencies {
     androidTestImplementation("androidx.test:runner:1.6.1")
 
 
-    androidTestImplementation("io.mockk:mockk-android:${mockkVersion}")
-    androidTestImplementation("io.mockk:mockk-agent:${mockkVersion}")
+    androidTestImplementation(libs.mockk.android)
+    androidTestImplementation(libs.mockk.agent)
 
     //images
-    implementation("com.github.bumptech.glide:glide:4.12.0")
+    implementation(libs.glide)
 
 }
