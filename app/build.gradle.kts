@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    kotlin("kapt")
 }
 
 android {
@@ -136,6 +138,7 @@ dependencies {
 
     //region persistence
     implementation("androidx.room:room-runtime:2.4.2")
+    kapt("androidx.room:room-compiler:2.4.2")
     //endregion persitence
 
     //region test
@@ -147,5 +150,7 @@ dependencies {
     androidTestImplementation("io.mockk:mockk-android:${mockkVersion}")
     androidTestImplementation("io.mockk:mockk-agent:${mockkVersion}")
 
+    //images
+    implementation("com.github.bumptech.glide:glide:4.12.0")
 
 }

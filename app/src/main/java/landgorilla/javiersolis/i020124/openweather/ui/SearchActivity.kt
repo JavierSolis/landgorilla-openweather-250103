@@ -51,10 +51,12 @@ class SearchActivity : AppCompatActivity(){
                 is SearchState.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE
                     binding.searchResultsRv.visibility = View.GONE
+                    binding.emptyText.visibility = View.GONE
                 }
                 is SearchState.Success -> {
                     binding.progressBar.visibility = View.GONE
                     binding.searchResultsRv.visibility = View.VISIBLE
+                    binding.emptyText.visibility = View.GONE
                     displayWeatherData(it.data)
                 }
                 is SearchState.Error -> {

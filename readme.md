@@ -1,3 +1,10 @@
+
+<div align="center">
+    <img src=".readme_images/logo.webp" width="400" align="center" alt="drawing"/>
+</div>
+
+---
+
 # **Android Weather App** ( Test Practico )
 
 Aplicación Android para consultar información de un servicio REST (API pública de clima) y mostrarla en una lista con una barra de búsqueda.
@@ -30,6 +37,13 @@ Sigue estos pasos:
 OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
 ## ...
 ```
+
+# Capturas
+
+![](.readme_images/main.png)
+
+![](.readme_images/result.png)
+
 
 
 # Main Requirements
@@ -81,11 +95,13 @@ OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
 [x] Setup error handling
 [x] Setup loading
 
-[ ] Testing UI
+[x] Testing UI
 
 [ ] Save whit room
 [ ] Testing logic
 
+[ ] Mejora de colores
+[ ]
 
 [ ] Finalize readme
 [ ] Send project
@@ -117,3 +133,16 @@ OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
 - Test UI espresso https://developer.android.com/training/testing/espresso?hl=es-419
 - Para mock se usa https://mockk.io/ para kotlin y simular el viewmodel en las pruebas de la UI ( ref. https://discuss.kotlinlang.org/t/how-to-best-use-mockito-in-kotlin/24675/3 )
 - Pruebas con Koin https://proandroiddev.com/easy-instrumented-tests-ui-tests-for-android-in-2021-2e28134ff309
+
+
+# Contributors
+
+![](.readme_images/coffee_img.png)
+
+# Contact
+
+![](.readme_images/contact_img.png)
+
+Javier Solis
+👓 https://www.linkedin.com/in/android-developer-peru/
+💼 https://www.behance.net/JavierJSolis

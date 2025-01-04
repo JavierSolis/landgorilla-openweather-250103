@@ -14,11 +14,13 @@ data class FindResponseItemDto(
 
     @Json(name = "weather")
     val weather: List<Weather>,
+    @Json(name = "sys")
+    val sys: Sys,
+    @Json(name = "main")
+    val main: Main,
 
 
     /**
-    @Json(name = "main")
-    val main: Main,
     @Json(name = "clouds")
     val clouds: Clouds,
     @Json(name = "coord")
@@ -29,8 +31,6 @@ data class FindResponseItemDto(
     val rain: Rain,
     @Json(name = "snow")
     val snow: Snow,
-    @Json(name = "sys")
-    val sys: Sys,
     @Json(name = "wind")
     val wind: Wind
      */

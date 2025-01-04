@@ -14,9 +14,9 @@ import androidx.room.Query
 
 @Dao
 interface CityDao {
-    @Query("SELECT * FROM CITY_TABLE WHERE name LIKE '%' || :query || '%'")
-    suspend fun searchCities(query: String): List<CityEntity>
+    @Query("SELECT * FROM city_table WHERE name LIKE '%' || :query || '%'")
+    fun searchCities(query: String): List<CityEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCities(cities: List<CityEntity>)
+    fun insertCities(cities: List<CityEntity>)
 }

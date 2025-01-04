@@ -3,8 +3,10 @@ package landgorilla.javiersolis.i020124.openweather.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import landgorilla.javiersolis.i020124.openweather.R
 
 /**
@@ -29,10 +31,26 @@ class CitiesAdapter(private val cities: List<CityModel>) : RecyclerView.Adapter<
     override fun getItemCount(): Int = cities.size
 
     class CityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val cityNameTextView: TextView = itemView.findViewById(R.id.city_name)
+        private val cityName: TextView = itemView.findViewById(R.id.city_name)
+        private val country: TextView = itemView.findViewById(R.id.country)
+        private val temperature: TextView = itemView.findViewById(R.id.temperature)
+        private val weatherDescription: TextView = itemView.findViewById(R.id.weather_description)
+        private val weatherIcon: ImageView = itemView.findViewById(R.id.weather_icon)
+        private val flagIcon: ImageView = itemView.findViewById(R.id.country_flag)
+
 
         fun bind(city: CityModel) {
-            cityNameTextView.text = city.name
+            cityName.text = city.name
+            country.text = city.country
+            temperature.text =  String.format("%.1f°C", city.temperature)
+            weatherDescription.text = city.description
+
+            Glide.with(itemView.context)
+                .load("https://openweathermap.org/img/wn/${city.icon}@2x.png")
+                .into(weatherIcon)
+            Glide.with(itemView.context)
+                .load("https://openweathermap.org/images/flags/${city.countryFlag}.png")
+                .into(flagIcon)
         }
     }
 }
