@@ -13,11 +13,12 @@
 Aplicación Android para consultar información de un servicio REST (API pública de clima) y mostrarla en una lista con una barra de búsqueda.
 
 ## **Requisitos**
-
-### 1. Android Studio Android Studio Ladybug | 2024.2.1 Patch 3 <br> Build #AI-242.23339.11.2421.12700392, built on November 22, 2024
+### 0. Clonar el repositorio o realizar un fork
+```shell
+git clone git@github.com:JavierSolis/landgorilla-openweather-250103.git
+```
+### 1. Se implemento en : Android Studio Android Studio Ladybug | 2024.2.1 Patch 3 <br> Build #AI-242.23339.11.2421.12700392, built on November 22, 2024
 ### 2. Gradle actualizado.
-
-
 ### 3. Configuración de API KEYS
 
 Para ejecutar la aplicación, necesitas proporcionar una API Key de Open Weather.
@@ -39,6 +40,8 @@ Sigue estos pasos:
 OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
 ## ...
 ```
+### 4. Listo con el archivo con la api key y AS actualizado deberías poder correrlo.
+
 
 
 
@@ -66,18 +69,31 @@ Se realizaron  3 test, 2 en SearchActivityTest.kt y 1 en WeatherRepositoryTest.k
 # Principales requisitos
 
 1. Interfaz de Usuario:
+   
    ✅ Crear una pantalla principal con una barra de búsqueda en la parte superior y una lista para mostrar los datos.
+   
    ✅ Incluir un diseño limpio y moderno utilizando Material Design.
+
 2. Lógica de Negocio:
+   
    ✅ Consumir datos de una API pública (por ejemplo, la API de OpenWeather https://openweathermap.org/api/one-call-3#how).
+   
    ✅ Mostrar la información relevante en la lista (por ejemplo, nombres de ciudades y temperaturas para la API del clima).
+   
    ✅ Implementar un filtro que permita buscar elementos en la lista basándose en una palabra clave.
+
 3. Persistencia de Datos:
+
    ✅ Guardar en caché la información descargada para que esté disponible sin conexión.
+
    ✅ Utilizar Room para almacenar los datos localmente.
+
 4. Buenas Prácticas:
+
    ✅ Aplicar el patrón MVVM (Model-View-ViewModel).
+
    ✅ Manejo adecuado de estados de la UI (loading, error, vacío).
+
    ✅ Escribir al menos un test unitario para la lógica de negocio y un test de UI utilizando JUnit y Espresso.
 
 
@@ -85,37 +101,55 @@ Se realizaron  3 test, 2 en SearchActivityTest.kt y 1 en WeatherRepositoryTest.k
 # Lista de tareas
 
 ✅ Setup initial project
+
 ✅ Setup material dependency
+
 ✅ Setup Koin
+
 ✅ Get Api Key Open Weather
+
 ✅ POC Postman Api OW test
+
 ✅ Setup gradle properties
+
 ✅ Setup retrofit
+
 ✅ Setup cache
+
 ✅ Setup repository
+
 ✅ Utils network available
+
 ✅ Setup room
+
 ✅ Setup Database
 
 ✅ Setup search view interactions
+
 ✅ Setup view
+
 ✅ Setup viewmodel
+
 ✅ Setup list view
+
 ✅ Setup states
 
 ✅ Setup test UI
 
 ✅ Setup error handling
+
 ✅ Setup loading
 
 ✅ Testing UI
 
 ✅ Save whit room
+
 ✅ Testing logic
 
 ✅ Mejora de colores
 
 ✅ Finalize readme
+
 ✅ Send project
 
 
@@ -155,8 +189,11 @@ Si tienes dudas adicionales o deseas contribuir al proyecto:
     
    <img src=".readme_images/contact_img.png" width="70" align="center" alt="gato"/>
 
+
 #### Javier Solis
+
 👓 https://www.linkedin.com/in/android-developer-peru/
+
 💼 https://www.behance.net/JavierJSolis
 
 </div>
