@@ -1,9 +1,12 @@
 
 <div align="center">
-    <img src=".readme_images/logo.webp" width="400" align="center" alt="drawing"/>
+    <img src=".readme_images/logo.webp" width="200" align="center" alt="drawing"/>
+
+
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/usuario/repo/releases) [![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT) [![Build](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/usuario/repo/actions)
 </div>
 
----
+
 
 # **Android Weather App** ( Test Practico )
 
@@ -11,12 +14,11 @@ Aplicación Android para consultar información de un servicio REST (API públic
 
 ## **Requisitos**
 
-- Android Studio Android Studio Ladybug | 2024.2.1 Patch 3
-  Build #AI-242.23339.11.2421.12700392, built on November 22, 2024
-- Gradle actualizado.
+### 1. Android Studio Android Studio Ladybug | 2024.2.1 Patch 3 <br> Build #AI-242.23339.11.2421.12700392, built on November 22, 2024
+### 2. Gradle actualizado.
 
 
-## Configuración de API KEYS
+### 3. Configuración de API KEYS
 
 Para ejecutar la aplicación, necesitas proporcionar una API Key de Open Weather.
 
@@ -38,11 +40,19 @@ OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
 ## ...
 ```
 
+
+
 # Capturas
 
-![](.readme_images/main.png)
+<div align="left">
+    
+   <img src=".readme_images/main.png" width="300" align="center" alt="drawing"/>
 
-![](.readme_images/result.png)
+   
+
+   <img src=".readme_images/result.png" width="300" align="center" alt="drawing"/>
+
+</div>
 
 
 # Testing
@@ -53,81 +63,67 @@ Se realizaron  3 test, 2 en SearchActivityTest.kt y 1 en WeatherRepositoryTest.k
 
 
 
-# Main Requirements
+# Principales requisitos
 
 1. Interfaz de Usuario:
-   [x] Crear una pantalla principal con una barra de búsqueda en la parte superior y
-   una lista para mostrar los datos.
-   [x] Incluir un diseño limpio y moderno utilizando Material Design.
+   ✅ Crear una pantalla principal con una barra de búsqueda en la parte superior y una lista para mostrar los datos.
+   ✅ Incluir un diseño limpio y moderno utilizando Material Design.
 2. Lógica de Negocio:
-   [x] Consumir datos de una API pública (por ejemplo, la API de OpenWeather
-   https://openweathermap.org/api/one-call-3#how).
-   [ ] Mostrar la información relevante en la lista (por ejemplo, nombres de
-   ciudades y temperaturas para la API del clima).
-   [x] Implementar un filtro que permita buscar elementos en la lista basándose en
-   una palabra clave.
+   ✅ Consumir datos de una API pública (por ejemplo, la API de OpenWeather https://openweathermap.org/api/one-call-3#how).
+   ✅ Mostrar la información relevante en la lista (por ejemplo, nombres de ciudades y temperaturas para la API del clima).
+   ✅ Implementar un filtro que permita buscar elementos en la lista basándose en una palabra clave.
 3. Persistencia de Datos:
-   [x] Guardar en caché la información descargada para que esté disponible sin conexión.
-   [x] Utilizar Room para almacenar los datos localmente.
+   ✅ Guardar en caché la información descargada para que esté disponible sin conexión.
+   ✅ Utilizar Room para almacenar los datos localmente.
 4. Buenas Prácticas:
-   [x] Aplicar el patrón MVVM (Model-View-ViewModel).
-   [x] Manejo adecuado de estados de la UI (loading, error, vacío).
-   [x] Escribir al menos un test unitario para la lógica de negocio y un test de UI
-   utilizando JUnit y Espresso.
-
-# TODO
-
-[x] Setup initial project
-[x] Setup material dependency
-[x] Setup Koin
-[x] Get Api Key Open Weather
-[x] POC Postman Api OW test
-[x] Setup gradle properties
-[x] Setup retrofit
-[x] Setup cache
-[x] Setup repository
-[x] Utils network available
-[x] Setup room
-[x] Setup Database
-
-[x] Setup search view interactions
-[x] Setup view
-[x] Setup viewmodel
-[x] Setup list view
-[x] Setup states
-
-[x] Setup test UI
-
-[x] Setup error handling
-[x] Setup loading
-
-[x] Testing UI
-
-[x] Save whit room
-[x] Testing logic
-
-[x] Mejora de colores
-
-[x] Finalize readme
-[x] Send project
+   ✅ Aplicar el patrón MVVM (Model-View-ViewModel).
+   ✅ Manejo adecuado de estados de la UI (loading, error, vacío).
+   ✅ Escribir al menos un test unitario para la lógica de negocio y un test de UI utilizando JUnit y Espresso.
 
 
 
+# Lista de tareas
 
-# Otras mejoras
+✅ Setup initial project
+✅ Setup material dependency
+✅ Setup Koin
+✅ Get Api Key Open Weather
+✅ POC Postman Api OW test
+✅ Setup gradle properties
+✅ Setup retrofit
+✅ Setup cache
+✅ Setup repository
+✅ Utils network available
+✅ Setup room
+✅ Setup Database
 
-- No se hizo multomudlar por no tener como obejtiv una aplicacion altamente escalabel
-- Para las api key siendo publico el proyecto se puede usar firebase secrets pero no se realizo para disminuir complejidad
-- Para monitorizar el estado de la aplicación se puede usar Timber o un sistema de logs mas robusto ( sentry, firebase crashlytics, etc)
-- Para las pruebas con inyecciones de koin mas complejas se puede crear el propio Instrumentation con Koin y sobrescribir los modulos.
-- Por el factor tiempo no se aladio mas pruebas, pero quedo una plantilla facil de replicar para otros casos.
+✅ Setup search view interactions
+✅ Setup view
+✅ Setup viewmodel
+✅ Setup list view
+✅ Setup states
+
+✅ Setup test UI
+
+✅ Setup error handling
+✅ Setup loading
+
+✅ Testing UI
+
+✅ Save whit room
+✅ Testing logic
+
+✅ Mejora de colores
+
+✅ Finalize readme
+✅ Send project
 
 
 # Notas y referencias usadas
 
-- Guía basica para usar material design en android , views con metodo utiles referente a material design https://m2-material-io.translate.goog/develop/android/docs/getting-started
+- Guía básica para usar material design en android , views con métodos útiles referente a material design https://m2-material-io.translate.goog/develop/android/docs/getting-started
 - Guía para Setup de Koin ( injector de dependencias) https://insert-koin.io/docs/setup/koin#jetpack-compose-or-compose-multiplatform
-- La api que se usara es https://api.openweathermap.org/data/2.5/find?q=lima&type=like&sort=population&cnt=30&appid=API_KEY
+- La api que se usará es https://api.openweathermap.org/data/2.5/find?q=lima&type=like&sort=population&cnt=30&appid=API_KEY
 - Open Weather postman online https://www.postman.com/api-evangelist/openweathermap/request/abttjsn/forecasted-weather?tab=params
 - Para imágenes de Open Weather
   - De temperatura: https://openweathermap.org/img/wn/01n@2x.png
@@ -140,14 +136,29 @@ Se realizaron  3 test, 2 en SearchActivityTest.kt y 1 en WeatherRepositoryTest.k
 - Pruebas con Koin https://proandroiddev.com/easy-instrumented-tests-ui-tests-for-android-in-2021-2e28134ff309
 - Para el mockk fue necesario usar los testoptions legacy ( ref. https://stackoverflow.com/questions/73146494/not-able-to-use-mockk-in-android-espresso-ui-testing)
 
-# Contributors
 
-![](.readme_images/coffee_img.png)
+# Deudas técnicas
 
-# Contact
+- No se implementó un diseño modular debido a que no era objetivo desarrollar una aplicación altamente escalable.
+- Para las API keys, al ser un proyecto público, se podría utilizar Firebase Secrets, pero esto no se implementó para reducir la complejidad.
+- Para monitorizar el estado de la aplicación, se pueden utilizar herramientas como Timber o sistemas de logs más robustos (Sentry, Firebase Crashlytics, etc.).
+- Por limitaciones de tiempo, no se añadieron más pruebas, pero quedó una plantilla fácil de replicar para otros casos.
 
-![](.readme_images/contact_img.png)
+# Soporte y contribuciones
+Si tienes dudas adicionales o deseas contribuir al proyecto:
+- Crea un issue en el repositorio: https://github.com/JavierSolis/landgorilla-openweather-250103/issues
+- Para contribuciones, abre un Pull .
 
-Javier Solis
+# Contacto
+
+<div align="center">
+    
+   <img src=".readme_images/contact_img.png" width="70" align="center" alt="gato"/>
+
+#### Javier Solis
 👓 https://www.linkedin.com/in/android-developer-peru/
 💼 https://www.behance.net/JavierJSolis
+
+</div>
+
+
