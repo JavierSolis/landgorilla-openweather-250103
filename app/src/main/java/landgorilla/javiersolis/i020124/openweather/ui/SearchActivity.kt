@@ -93,7 +93,7 @@ class SearchActivity : AppCompatActivity(){
     private fun performSearch(query: String) {
         // Aquí puedes manejar la lógica de búsqueda
         // Por ejemplo, llamar al ViewModel para hacer la búsqueda
-        viewModel.searchWeather(query)
+        vm?.searchWeather(query)
     }
 
     private fun displayWeatherData(dataCities: List<CityModel>) {

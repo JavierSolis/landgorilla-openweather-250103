@@ -1,3 +1,6 @@
+import com.android.build.api.dsl.AndroidTest
+import com.android.build.api.dsl.Packaging
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -5,6 +8,7 @@ plugins {
 }
 
 android {
+
     namespace = "landgorilla.javiersolis.i020124.openweather"
     compileSdk = 34
 
@@ -20,6 +24,16 @@ android {
         buildConfigField("String", "API_KEY", "\"${property("OPEN_WEATHER_KEY")}\"")
         buildConfigField("String", "BASE_URL", "\"https://api.openweathermap.org/data/2.5/\"")
 
+    }
+
+
+    testOptions {
+        animationsDisabled = true
+        packagingOptions {
+            jniLibs {
+                useLegacyPackaging = true
+            }
+        }
     }
 
     buildTypes {
@@ -43,7 +57,34 @@ android {
         viewBinding = true
         buildConfig = true
     }
+
+    // Excluir archivos conflictivos
+
+    packagingOptions {
+        resources {
+            // Excluir archivos conflictivos
+            excludes += "META-INF/LICENSE.md"
+            excludes += "META-INF/LICENSE.txt"
+            excludes += "META-INF/NOTICE.md"
+            excludes += "META-INF/NOTICE.txt"
+            excludes += "META-INF/LICENSE-notice.md"
+            excludes += "META-INF/DEPENDENCIES"
+            excludes += "META-INF/LICENSE"
+            excludes += "META-INF/license.txt"
+            excludes += "META-INF/NOTICE"
+            excludes += "META-INF/notice.txt"
+            excludes += "META-INF/ASL2.0"
+            excludes += "META-INF/LGPL2.1"
+            excludes += "META-INF/AL2.0"
+            exclude("META-INF/*.kotlin_module")
+
+        }
+    }
 }
+
+//tasks.withType<Test> {
+//    jvmArgs("--add-opens", "java.base/java.time=ALL-UNNAMED")
+//}
 
 val koin_version = "3.1.2"
 val mockkVersion = "1.13.14"
@@ -102,19 +143,9 @@ dependencies {
 
     androidTestImplementation("androidx.test:runner:1.6.1")
 
-    /*
-    androidTestImplementation ("org.mockito:mockito-core:4.8.0")
-    androidTestImplementation ("org.mockito:mockito-inline:4.8.0")
-    androidTestImplementation ("org.mockito:mockito-android:4.8.0")
-    androidTestImplementation ("org.mockito.kotlin:mockito-kotlin:4.8.0")
-    */
+
     androidTestImplementation("io.mockk:mockk-android:${mockkVersion}")
     androidTestImplementation("io.mockk:mockk-agent:${mockkVersion}")
 
-    //androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-    //androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    //androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    //androidTestImplementation("androidx.arch.core:core-testing:2.1.0")
-    //testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
-    //endregion test
+
 }

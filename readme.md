@@ -96,9 +96,10 @@ OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
 # Otras mejoras
 
 - No se hizo multomudlar por no tener como obejtiv una aplicacion altamente escalabel
-- Se puede usar Moshi con retrofit para una mejor serializacion de los datos ( validación de tipos)
 - Para las api key siendo publico el proyecto se puede usar firebase secrets pero no se realizo para disminuir complejidad
 - Para monitorizar el estado de la aplicación se puede usar Timber o un sistema de logs mas robusto ( sentry, firebase crashlytics, etc)
+- Para las pruebas con inyecciones de koin mas complejas se puede crear el propio Instrumentation con Koin y sobrescribir los modulos.
+- Por el factor tiempo no se aladio mas pruebas, pero quedo una plantilla facil de replicar para otros casos.
 
 
 # Notas y referencias usadas
@@ -106,13 +107,13 @@ OPEN_WEATHER_KEY=tu_api_key_secreta_de_openweather
 - Guía basica para usar material design en android , views con metodo utiles referente a material design https://m2-material-io.translate.goog/develop/android/docs/getting-started
 - Guía para Setup de Koin ( injector de dependencias) https://insert-koin.io/docs/setup/koin#jetpack-compose-or-compose-multiplatform
 - La api que se usara es https://api.openweathermap.org/data/2.5/find?q=lima&type=like&sort=population&cnt=30&appid=API_KEY
-- Open Wheather postman online https://www.postman.com/api-evangelist/openweathermap/request/abttjsn/forecasted-weather?tab=params
-- Para imágenes
+- Open Weather postman online https://www.postman.com/api-evangelist/openweathermap/request/abttjsn/forecasted-weather?tab=params
+- Para imágenes de Open Weather
   - De temperatura: https://openweathermap.org/img/wn/01n@2x.png
   - De banderas: https://openweathermap.org/images/flags/pe.png
   - De localización https://openweathermap.org/weathermap?zoom=12&lat=-12.0432&lon=-77.0282
 - Para dudas adicionales de la api OpenWeather tiene su IA Assistant https://openweathermap.org/support-centre
 - Room https://developer.android.com/jetpack/androidx/releases/room?hl=es-419
-
 - Test UI espresso https://developer.android.com/training/testing/espresso?hl=es-419
-- Para mock se usa https://mockk.io/ para kotlin y simular el viewmodel en las pruebas de la UI
+- Para mock se usa https://mockk.io/ para kotlin y simular el viewmodel en las pruebas de la UI ( ref. https://discuss.kotlinlang.org/t/how-to-best-use-mockito-in-kotlin/24675/3 )
+- Pruebas con Koin https://proandroiddev.com/easy-instrumented-tests-ui-tests-for-android-in-2021-2e28134ff309

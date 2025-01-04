@@ -1,5 +1,6 @@
 package landgorilla.javiersolis.i020124.openweather.ui
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -22,6 +23,8 @@ class SearchViewModel(private val searchWeatherUseCase: SearchWeatherDomain):Vie
     fun getState() = _searchState as LiveData<SearchState>
 
     fun searchWeather(country: String) {
+        Log.e("TESTT","original")
+
         _searchState.value = SearchState.Loading   // Cambiar el estado a Loading
 
         viewModelScope.launch {
@@ -33,7 +36,7 @@ class SearchViewModel(private val searchWeatherUseCase: SearchWeatherDomain):Vie
             if (result.isSuccess) {
                 _searchState.value = SearchState.Success(result.getOrNull()!!)
             } else {
-                _searchState.value = SearchState.Error(result.exceptionOrNull()?.message ?: "Unknown error")
+                _searchState.value = SearchState.Error(result.exceptionOrNull()?.message ?: "Error desconocido... intente nuevamente")
             }
         }
     }
